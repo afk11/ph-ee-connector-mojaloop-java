@@ -6,5 +6,17 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+
+      - name: Check out ph-ee-connector-common repository code
+        uses: actions/checkout@master
+        with:
+          repository: openMF/ph-ee-connector-common
+          ref: refs/heads/master
+          path: 'ph-ee-connector-common'
+
+      - name: Build ph-ee-connector-common
+        working-directory: ph-ee-connector-common
+        run: ./gradlew clean install
+
       - name: Package project
         run: mvn -U clean package
