@@ -14,7 +14,7 @@ jobs:
           ref: refs/heads/master
           path: 'ph-ee-connector-common'
 
-      - name: Build ph-ee-connector-common
+      - name: Install ph-ee-connector-common
         working-directory: ph-ee-connector-common
         run: ./gradlew clean install
 
