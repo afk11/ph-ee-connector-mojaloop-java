@@ -16,7 +16,8 @@ jobs:
 
       - name: Install ph-ee-connector-common
         working-directory: ph-ee-connector-common
-        run: ./gradlew clean install
+#        run: ./gradlew clean install
+        run: mvn clean install
 
       - name: Copy settings.xml
         run: cp -v .github/contrib/settings.xml $HOME/.m2/
